@@ -21,13 +21,14 @@
          <li {% if 'about' in request.path %} class="nav-item active mr-3" {% else %} class="nav-item mr-3" {% endif %} >
           <a class="nav-link" href={% url 'about' %}>About</a>
         </li>
-        <li class="nav-item mr-3">
-          {% comment %} come back later {% endcomment %}
-          <a class="nav-link" href="listings.html">Featured Listings</a>
+          <li {% if 'listings' in request.path %} class="nav-item active mr-3" {% else %} 
+          class="nav-item mr-3" {% endif %} >
+          <a class="nav-link" href={% url 'listings' %}>Featured Listings</a>
         </li>
       </ul>
 
       <ul class="navbar-nav ml-auto">
+      {% comment %} do we need to update css active ? {% endcomment %}
         <li class="nav-item mr-3">
           {% comment %} come back later {% endcomment %}
           <a class="nav-link" href="register.html">
