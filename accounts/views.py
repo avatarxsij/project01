@@ -11,6 +11,7 @@ def login(request):
         user = auth.authenticate(username=username, password=password)
         if user is not None:
             auth.login(request, user)
+            messages.success(request, "You are logging in !")
             return redirect('dashboard')
         else:
             messages.error(request, 'User login failed !')
